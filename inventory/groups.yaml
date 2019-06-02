@@ -1,0 +1,5 @@
+---
+nornir_network:
+  username: ""
+  password: ""
+  platform: ios

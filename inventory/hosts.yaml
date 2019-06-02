@@ -1,0 +1,16 @@
+---
+nn-p-01:
+  username: ""
+  password: ""
+  platform: ios
+  hostname: '192.168.79.128'
+  port: 5000
+  groups: ['nornir_network']
+
+nn-pe-01:
+  username: ""
+  password: ""
+  platform: ios
+  hostname: '192.168.79.128'
+  port: 5001
+  groups: ['nornir_network']

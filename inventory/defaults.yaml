@@ -1,0 +1,4 @@
+---
+connection_options:
+    napalm:
+      extras: {"optional_args" : {"transport": "telnet"}}
