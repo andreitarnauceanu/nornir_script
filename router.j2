@@ -1,0 +1,18 @@
+interface Loopback0
+ ip address {{host['loopback0']}} 255.255.255.255
+!
+{% for interface in host['interfaces'] %}
+interface {{ interface.name }}
+  description {{ interface.description }}
+  ip address {{ interface.ip }} {{ interface.net }}
+  no shutdown
+{% endfor %}
+
+router bgp {{ host['asn'] }}
+ bgp router-id {{  host['loopback0'] }}
+ address-family ipv4 unicast
+{% for n in host['networks'] %}
+  network {{ n.net }} mask {{ n.mask }}
+{% endfor %}
+!
+!

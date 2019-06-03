@@ -3,3 +3,9 @@ nornir_network:
   username: ""
   password: ""
   platform: ios
+  connection_options:
+    napalm:
+      extras: {"optional_args": {transport: "telnet", dest_file_system: "disk0:", timeout: 60, allow_agent: ios, global_delay_factor: 3}}
+
+  data:
+    site: 'nornir'

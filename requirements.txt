@@ -1,1 +1,1 @@
-nornir
+nornir==2.2.0
