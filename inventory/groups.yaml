@@ -1,15 +1,14 @@
 ---
 nornir_network:
+  platform: 'ios'
   data:
     site: 'nornir'
-#  connection_options:
-#    napalm:
-#      extras:
-#        optional_args:
-#          transport: 'telnet'
-#          port: 5004
-#          dest_file_system: 'flash0:'
+  connection_options:
+    napalm:
+      extras:
+        optional_args:
+          dest_file_system: 'flash0:'
 #          timeout: 60
 #          allow_agent: ios
 #          global_delay_factor: 4
-#          device_type: 'cisco_ios_telnet'
+          device_type: 'cisco_ios_telnet'
