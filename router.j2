@@ -7,12 +7,10 @@ interface {{ interface.name }}
   ip address {{ interface.ip }} {{ interface.net }}
   no shutdown
 {% endfor %}
-
-router bgp {{ host['asn'] }}
- bgp router-id {{  host['loopback0'] }}
- address-family ipv4 unicast
+!
+router ospf {{ host['asn'] }}
 {% for n in host['networks'] %}
-  network {{ n.net }} mask {{ n.mask }}
+  network {{ n.net }} {{ n.mask }} area 0
 {% endfor %}
 !
 !

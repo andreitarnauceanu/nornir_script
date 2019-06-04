@@ -1,40 +1,58 @@
 ---
 nn-p-01:
-  username: ""
-  password: ""
+  hostname: 192.168.151.197
+  username: admin
+  password: cisco
+  port: 23
   platform: ios
-  hostname: '192.168.56.101'
-  port: 5000
   groups: ['nornir_network']
   data:
       site: 'nornir'
       loopback0: '10.0.0.1'
       interfaces:
-        - name: Fe0/0
-          ip: 192.168.10.1
+        - name: Gi0/0
+          ip: 192.168.12.1
           net: 255.255.255.0
           description: 'R1 to R2'
-        - name: Fe1/0
-          ip: 192.168.11.1
+        - name: Gi0/1
+          ip: 192.168.13.1
           net: 255.255.255.0
-          description: 'FREE'
-
-nn-pe-01:
-  username: ""
-  password: ""
+          description: 'R1 to R3'
+nn-p-02:
+  hostname: 192.168.151.230
+  username: admin
+  password: cisco
+  port: 23
   platform: ios
-  hostname: '192.168.56.101'
-  port: 5001
   groups: ['nornir_network']
   data:
     site: 'nornir'
     loopback0: '10.0.0.2'
     interfaces:
-      - name: Fe0/0
-        ip: 192.168.10.2
+      - name: Gi0/0
+        ip: 192.168.12.2
         net: 255.255.255.0
         description: 'R2 to R1'
-      - name: Fe1/0
-        ip: 192.168.11.2
+      - name: Gi0/2
+        ip: 192.168.23.2
         net: 255.255.255.0
-        description: 'FREE'
+        description: 'R2 to R3'
+nn-p-03:
+  hostname: 192.168.151.197
+  username: admin
+  password: cisco
+  port: 23
+  platform: ios
+  groups: ['nornir_network']
+  data:
+    site: 'nornir'
+    loopback0: '10.0.0.3'
+    interfaces:
+      - name: Gi0/1
+        ip: 192.168.13.2
+        net: 255.255.255.0
+        description: 'R3 to R1'
+      - name: Gi0/2
+        ip: 192.168.23.2
+        net: 255.255.255.0
+        description: 'R2 to R2'
