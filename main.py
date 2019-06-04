@@ -18,7 +18,6 @@ def load_data(task):
 
 
 nr = InitNornir(config_file="config.yaml")
-routers = nr.filter(platform="ios")
-nornir = routers.filter(site="nornir")
+nornir = nr.filter(site="nornir")
 r = nornir.run(load_data)
 print_result(r)
