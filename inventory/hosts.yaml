@@ -1,13 +1,13 @@
 ---
 nn-p-01:
-  hostname: "192.168.79.128"
+  hostname: "192.168.195.128"
   groups: ['nornir_network']
   connection_options:
     napalm:
       extras:
         optional_args:
           transport: 'telnet'
-          port: 5009
+          port: 5000
   data:
       loopback0: '10.0.0.1'
       interfaces:
@@ -32,14 +32,14 @@ nn-p-01:
           net: 255.255.255.0
           description: 'P1 to PE1'
 nn-p-02:
-  hostname: "192.168.79.128"
+  hostname: "192.168.195.128"
   groups: ['nornir_network']
   connection_options:
     napalm:
       extras:
         optional_args:
           transport: 'telnet'
-          port: 5011
+          port: 5002
   data:
     loopback0: '10.0.0.2'
     interfaces:
@@ -64,14 +64,14 @@ nn-p-02:
         net: 255.255.255.0
         description: 'P2 to PE2'
 nn-p-03:
-  hostname: "192.168.79.128"
+  hostname: "192.168.195.128"
   groups: ['nornir_network']
   connection_options:
     napalm:
       extras:
         optional_args:
           transport: 'telnet'
-          port: 5013
+          port: 5004
   data:
     loopback0: '10.0.0.3'
     interfaces:
@@ -96,14 +96,14 @@ nn-p-03:
         net: 255.255.255.0
         description: 'P3 to PE4'
 nn-p-04:
-  hostname: "192.168.79.128"
+  hostname: "192.168.195.128"
   groups: ['nornir_network']
   connection_options:
     napalm:
       extras:
         optional_args:
           transport: 'telnet'
-          port: 5072
+          port: 5006
   data:
     loopback0: '10.0.0.4'
     interfaces:
@@ -128,14 +128,14 @@ nn-p-04:
         net: 255.255.255.0
         description: 'P4 to PE5'
 nn-pe-01:
-  hostname: "192.168.79.128"
+  hostname: "192.168.195.128"
   groups: ['nornir_network']
   connection_options:
     napalm:
       extras:
         optional_args:
           transport: 'telnet'
-          port: 5074
+          port: 5008
   data:
     loopback0: '10.0.1.1'
     interfaces:
@@ -149,14 +149,14 @@ nn-pe-01:
         description: 'PE1 to P1'
 # TODO - add CE interface details
 nn-pe-02:
-  hostname: "192.168.79.128"
+  hostname: "192.168.195.128"
   groups: ['nornir_network']
   connection_options:
     napalm:
       extras:
         optional_args:
           transport: 'telnet'
-          port: 5076
+          port: 5010
   data:
     loopback0: '10.0.1.2'
     interfaces:
@@ -169,14 +169,14 @@ nn-pe-02:
         net: 255.255.255.0
         description: 'PE2 to P2'
 nn-pe-03:
-  hostname: "192.168.79.128"
+  hostname: "192.168.195.128"
   groups: ['nornir_network']
   connection_options:
     napalm:
       extras:
         optional_args:
           transport: 'telnet'
-          port: 5078
+          port: 5012
   data:
     loopback0: '10.0.1.3'
     interfaces:
@@ -189,14 +189,14 @@ nn-pe-03:
         net: 255.255.255.0
         description: 'PE3 to P4'
 nn-pe-04:
-  hostname: "192.168.79.128"
+  hostname: "192.168.195.128"
   groups: ['nornir_network']
   connection_options:
     napalm:
       extras:
         optional_args:
           transport: 'telnet'
-          port: 5080
+          port: 5014
   data:
     loopback0: '10.0.1.4'
     interfaces:
@@ -209,14 +209,14 @@ nn-pe-04:
         net: 255.255.255.0
         description: 'PE4 to P3'
 nn-pe-05:
-  hostname: "192.168.79.128"
+  hostname: "192.168.195.128"
   groups: ['nornir_network']
   connection_options:
     napalm:
       extras:
         optional_args:
           transport: 'telnet'
-          port: 5082
+          port: 5016
   data:
     loopback0: '10.0.1.5'
     interfaces:
@@ -229,14 +229,14 @@ nn-pe-05:
         net: 255.255.255.0
         description: 'PE5 to P4'
 nn-pe-06:
-  hostname: "192.168.79.128"
+  hostname: "192.168.195.128"
   groups: ['nornir_network']
   connection_options:
     napalm:
       extras:
         optional_args:
           transport: 'telnet'
-          port: 5000
+          port: 5018
   data:
     loopback0: '10.0.1.6'
     interfaces:
