@@ -3,8 +3,20 @@ connection_options:
   napalm:
     extras:
       optional_args:
+        transport: 'telnet'
         dest_file_system: 'flash0:'
-        timeout: 60
+        timeout: 30
         allow_agent: ios
         global_delay_factor: 10
         device_type: 'cisco_ios_telnet'
+  netmiko:
+    platform: 'cisco_ios_telnet'
+data:
+  domain: 'gns3.local'
+  users:
+    - name: 'admin'
+      pass: 'cisco'
+      privilege: 15
+    - name: 'guest'
+      pass: 'password'
+      privilege: 5

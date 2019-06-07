@@ -1,0 +1,42 @@
+hostname {{ host['hostname'] }}
+ip domain-name {{ host['domain'] }}
+!
+interface Loopback0
+ ip address {{host['loopback0']}} 255.255.255.255
+!
+{% if host.mpls %}
+mpls ip
+{% endif %}
+!
+{% for interface in host['interfaces'] %}
+interface {{ interface.name }}
+  description {{ interface.description }}
+  ip address {{ interface.ip }} {{ interface.net }}
+  {% if interface.mpls %}
+  mpls ip
+  {% endif %}
+  no shutdown
+{% endfor %}
+!
+router ospf {{ host['asn'] }}
+{% for n in host['networks'] %}
+  network {{ n.net }} {{ n.mask }} area 0
+{% endfor %}
+!
+!
+{% for user in host['users'] %}
+username {{ user.name }} privilege {{ user.privilege }} password {{ user.pass }}
+{% endfor %}
+!
+ip ssh version 2
+!
+crypto key generate rsa modulus 1024
+!
+line vty 0 4
+ login local
+ transport input ssh telnet
+ logging synchronous
+!
+line console 0
+ logging synchronous
+!

@@ -1,6 +1,7 @@
 ---
 nn-p-01:
   hostname: "192.168.195.128"
+  port: 5000
   groups: ['nornir_network']
   connection_options:
     napalm:
@@ -9,30 +10,37 @@ nn-p-01:
           transport: 'telnet'
           port: 5000
   data:
-      loopback0: '10.0.0.1'
-      interfaces:
-        - name: Gi0/0
-          ip: 10.123.14.1
-          net: 255.255.255.0
-          description: 'P1 to P4'
-        - name: Gi0/1
-          ip: 10.123.12.1
-          net: 255.255.255.0
-          description: 'P1 to P2'
-        - name: Gi0/2
-          ip: 172.16.15.1
-          net: 255.255.255.0
-          description: 'P1 to PE5'
-        - name: Gi0/3
-          ip: 172.16.16.1
-          net: 255.255.255.0
-          description: 'P1 to PE6'
-        - name: Gi0/4
-          ip: 172.16.11.1
-          net: 255.255.255.0
-          description: 'P1 to PE1'
+    hostname: 'P1'
+    loopback0: '10.0.0.1'
+    interfaces:
+      - name: Gi0/0
+        ip: 10.123.14.1
+        net: 255.255.255.0
+        description: 'P1 to P4'
+        mpls: True
+      - name: Gi0/1
+        ip: 10.123.12.1
+        net: 255.255.255.0
+        description: 'P1 to P2'
+        mpls: True
+      - name: Gi0/2
+        ip: 172.16.15.1
+        net: 255.255.255.0
+        description: 'P1 to PE5'
+        mpls: True
+      - name: Gi0/3
+        ip: 172.16.16.1
+        net: 255.255.255.0
+        description: 'P1 to PE6'
+        mpls: True
+      - name: Gi0/4
+        ip: 172.16.11.1
+        net: 255.255.255.0
+        description: 'P1 to PE1'
+        mpls: True
 nn-p-02:
   hostname: "192.168.195.128"
+  port: 5002
   groups: ['nornir_network']
   connection_options:
     napalm:
@@ -41,30 +49,37 @@ nn-p-02:
           transport: 'telnet'
           port: 5002
   data:
+    hostname: 'P2'
     loopback0: '10.0.0.2'
     interfaces:
       - name: Gi0/0
         ip: 10.123.23.1
         net: 255.255.255.0
         description: 'P2 to P3'
+        mpls: True
       - name: Gi0/1
         ip: 10.123.12.2
         net: 255.255.255.0
         description: 'P2 to P1'
+        mpls: True
       - name: Gi0/2
         ip: 172.16.21.1
         net: 255.255.255.0
         description: 'P2 to PE1'
+        mpls: True
       - name: Gi0/3
         ip: 172.16.26.1
         net: 255.255.255.0
         description: 'P2 to PE6'
+        mpls: True
       - name: Gi0/4
         ip: 172.16.22.1
         net: 255.255.255.0
         description: 'P2 to PE2'
+        mpls: True
 nn-p-03:
   hostname: "192.168.195.128"
+  port: 5004
   groups: ['nornir_network']
   connection_options:
     napalm:
@@ -73,30 +88,37 @@ nn-p-03:
           transport: 'telnet'
           port: 5004
   data:
+    hostname: 'P3'
     loopback0: '10.0.0.3'
     interfaces:
       - name: Gi0/0
         ip: 10.123.23.2
         net: 255.255.255.0
         description: 'P3 to P2'
+        mpls: True
       - name: Gi0/1
         ip: 10.123.34.1
         net: 255.255.255.0
         description: 'P3 to P4'
+        mpls: True
       - name: Gi0/2
         ip: 172.16.32.1
         net: 255.255.255.0
         description: 'P3 to PE2'
+        mpls: True
       - name: Gi0/3
         ip: 172.16.33.1
         net: 255.255.255.0
         description: 'P3 to PE3'
+        mpls: True
       - name: Gi0/4
         ip: 172.16.34.1
         net: 255.255.255.0
         description: 'P3 to PE4'
+        mpls: True
 nn-p-04:
   hostname: "192.168.195.128"
+  port: 5006
   groups: ['nornir_network']
   connection_options:
     napalm:
@@ -105,30 +127,37 @@ nn-p-04:
           transport: 'telnet'
           port: 5006
   data:
+    hostname: 'P4'
     loopback0: '10.0.0.4'
     interfaces:
       - name: Gi0/0
         ip: 10.123.14.2
         net: 255.255.255.0
         description: 'P4 to P1'
+        mpls: True
       - name: Gi0/1
         ip: 10.123.34.2
         net: 255.255.255.0
         description: 'P4 to P3'
+        mpls: True
       - name: Gi0/2
         ip: 172.16.44.1
         net: 255.255.255.0
         description: 'P4 to PE4'
+        mpls: True
       - name: Gi0/3
         ip: 172.16.43.1
         net: 255.255.255.0
         description: 'P4 to PE3'
+        mpls: True
       - name: Gi0/4
         ip: 172.16.45.1
         net: 255.255.255.0
         description: 'P4 to PE5'
+        mpls: True
 nn-pe-01:
   hostname: "192.168.195.128"
+  port: 5008
   groups: ['nornir_network']
   connection_options:
     napalm:
@@ -137,39 +166,49 @@ nn-pe-01:
           transport: 'telnet'
           port: 5008
   data:
+    hostname: 'PE1'
     loopback0: '10.0.1.1'
     interfaces:
       - name: Gi0/0
         ip: 172.16.21.2
         net: 255.255.255.0
         description: 'PE1 to P2'
+        mpls: True
       - name: Gi0/1
         ip: 172.16.11.2
         net: 255.255.255.0
         description: 'PE1 to P1'
+        mpls: True
 # TODO - add CE interface details
 nn-pe-02:
   hostname: "192.168.195.128"
+  port: 5010
   groups: ['nornir_network']
   connection_options:
+    netmiko:
+      platform: 'cisco_ios_telnet'
     napalm:
       extras:
         optional_args:
           transport: 'telnet'
           port: 5010
   data:
+    hostname: 'PE2'
     loopback0: '10.0.1.2'
     interfaces:
       - name: Gi0/0
         ip: 172.16.32.2
         net: 255.255.255.0
         description: 'PE2 to P3'
+        mpls: True
       - name: Gi0/1
         ip: 172.16.22.2
         net: 255.255.255.0
         description: 'PE2 to P2'
+        mpls: True
 nn-pe-03:
   hostname: "192.168.195.128"
+  port: 5012
   groups: ['nornir_network']
   connection_options:
     napalm:
@@ -178,18 +217,22 @@ nn-pe-03:
           transport: 'telnet'
           port: 5012
   data:
+    hostname: 'PE3'
     loopback0: '10.0.1.3'
     interfaces:
       - name: Gi0/0
         ip: 172.16.33.2
         net: 255.255.255.0
         description: 'PE3 to P3'
+        mpls: True
       - name: Gi0/1
         ip: 172.16.43.2
         net: 255.255.255.0
         description: 'PE3 to P4'
+        mpls: True
 nn-pe-04:
   hostname: "192.168.195.128"
+  port: 5014
   groups: ['nornir_network']
   connection_options:
     napalm:
@@ -198,18 +241,22 @@ nn-pe-04:
           transport: 'telnet'
           port: 5014
   data:
+    hostname: 'PE4'
     loopback0: '10.0.1.4'
     interfaces:
       - name: Gi0/0
         ip: 172.16.44.2
         net: 255.255.255.0
         description: 'PE4 to P4'
+        mpls: True
       - name: Gi0/1
         ip: 172.16.34.2
         net: 255.255.255.0
         description: 'PE4 to P3'
+        mpls: True
 nn-pe-05:
   hostname: "192.168.195.128"
+  port: 5016
   groups: ['nornir_network']
   connection_options:
     napalm:
@@ -218,18 +265,22 @@ nn-pe-05:
           transport: 'telnet'
           port: 5016
   data:
+    hostname: 'PE5'
     loopback0: '10.0.1.5'
     interfaces:
       - name: Gi0/0
         ip: 172.16.15.2
         net: 255.255.255.0
         description: 'PE5 to P1'
+        mpls: True
       - name: Gi0/1
         ip: 172.16.45.2
         net: 255.255.255.0
         description: 'PE5 to P4'
+        mpls: True
 nn-pe-06:
   hostname: "192.168.195.128"
+  port: 5018
   groups: ['nornir_network']
   connection_options:
     napalm:
@@ -238,13 +289,16 @@ nn-pe-06:
           transport: 'telnet'
           port: 5018
   data:
+    hostname: 'PE6'
     loopback0: '10.0.1.6'
     interfaces:
       - name: Gi0/0
         ip: 172.16.16.2
         net: 255.255.255.0
         description: 'PE6 to P1'
+        mpls: True
       - name: Gi0/1
         ip: 172.16.26.2
         net: 255.255.255.0
         description: 'PE6 to P2'
+        mpls: True
