@@ -2,7 +2,10 @@
 nn-p-01:
   hostname: "192.168.195.128"
   port: 5000
-  groups: ['nornir_network']
+  groups:
+    - nornir_network
+    - p_routers
+    - reflector_routers
   connection_options:
     napalm:
       extras:
@@ -41,7 +44,9 @@ nn-p-01:
 nn-p-02:
   hostname: "192.168.195.128"
   port: 5002
-  groups: ['nornir_network']
+  groups:
+    - nornir_network
+    - p_routers
   connection_options:
     napalm:
       extras:
@@ -80,7 +85,9 @@ nn-p-02:
 nn-p-03:
   hostname: "192.168.195.128"
   port: 5004
-  groups: ['nornir_network']
+  groups:
+    - nornir_network
+    - p_routers
   connection_options:
     napalm:
       extras:
@@ -119,7 +126,9 @@ nn-p-03:
 nn-p-04:
   hostname: "192.168.195.128"
   port: 5006
-  groups: ['nornir_network']
+  groups:
+    - nornir_network
+    - p_routers
   connection_options:
     napalm:
       extras:
@@ -158,7 +167,9 @@ nn-p-04:
 nn-pe-01:
   hostname: "192.168.195.128"
   port: 5008
-  groups: ['nornir_network']
+  groups:
+    - nornir_network
+    - pe_routers
   connection_options:
     napalm:
       extras:
@@ -183,7 +194,9 @@ nn-pe-01:
 nn-pe-02:
   hostname: "192.168.195.128"
   port: 5010
-  groups: ['nornir_network']
+  groups:
+    - nornir_network
+    - pe_routers
   connection_options:
     netmiko:
       platform: 'cisco_ios_telnet'
@@ -209,7 +222,9 @@ nn-pe-02:
 nn-pe-03:
   hostname: "192.168.195.128"
   port: 5012
-  groups: ['nornir_network']
+  groups:
+    - nornir_network
+    - pe_routers
   connection_options:
     napalm:
       extras:
@@ -233,7 +248,9 @@ nn-pe-03:
 nn-pe-04:
   hostname: "192.168.195.128"
   port: 5014
-  groups: ['nornir_network']
+  groups:
+    - nornir_network
+    - pe_routers
   connection_options:
     napalm:
       extras:
@@ -257,7 +274,9 @@ nn-pe-04:
 nn-pe-05:
   hostname: "192.168.195.128"
   port: 5016
-  groups: ['nornir_network']
+  groups:
+    - nornir_network
+    - pe_routers
   connection_options:
     napalm:
       extras:
@@ -281,7 +300,9 @@ nn-pe-05:
 nn-pe-06:
   hostname: "192.168.195.128"
   port: 5018
-  groups: ['nornir_network']
+  groups:
+    - nornir_network
+    - pe_routers
   connection_options:
     napalm:
       extras:
