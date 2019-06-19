@@ -44,7 +44,7 @@ def populate_group_files(nr):
         else:
             filename = 'groups/pe_routers.yaml'
         with open(filename, 'w') as f:
-            data = '# this file is generated automaticly\n'
+            data = '# this file is generated automatically\n'
             data = data + dump({'neighbors': neighbors})
             f.write(data)
 
@@ -78,6 +78,7 @@ nr = InitNornir(config_file="config.yaml")
 print("1. Configure network")
 print("2. Erase configuration and reboot")
 print("3. Configure mbgp")
+print("4. Configure CE routers")
 option = input('Option: ')
 
 
@@ -99,3 +100,5 @@ elif option=='3':
     mbgp_reflector_hosts = nr.filter(mbgp_type='reflector')
     result = mbgp_reflector_hosts.run(mbgp_configure_reflector)
     print_result(result)
+elif option=='3':
+    pass
