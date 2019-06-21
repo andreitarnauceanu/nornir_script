@@ -359,10 +359,8 @@ nn-ce-01:
   hostname: "192.168.195.128"
   port: 5020
   groups:
-    - nornir_network
-    - ce_routers
-    - customers
     - customer_1
+    - nornir_network
   connection_options:
     napalm:
       extras:
@@ -375,8 +373,7 @@ nn-ce-01:
     dhcp:
       subnet: 192.168.1.0
       netmask: 255.255.255.0
-      exclude:
-        - 192.168.1.1
+      gateway: 192.168.1.1
     interfaces:
       - name: Gi0/0
         ip: 192.168.31.2
@@ -390,10 +387,8 @@ nn-ce-02:
   hostname: "192.168.195.128"
   port: 5022
   groups:
-    - nornir_network
-    - ce_routers
-    - customers
     - customer_2
+    - nornir_network
   connection_options:
     napalm:
       extras:
@@ -406,8 +401,7 @@ nn-ce-02:
     dhcp:
       subnet: 192.168.1.0
       netmask: 255.255.255.0
-      exclude:
-        - 192.168.1.1
+      gateway: 192.168.1.1
     interfaces:
       - name: Gi0/0
         ip: 192.168.42.2
@@ -421,10 +415,8 @@ nn-ce-03:
   hostname: "192.168.195.128"
   port: 5024
   groups:
-    - nornir_network
-    - ce_routers
-    - customers
     - customer_1
+    - nornir_network
   connection_options:
     napalm:
       extras:
@@ -437,8 +429,7 @@ nn-ce-03:
     dhcp:
       subnet: 192.168.2.0
       netmask: 255.255.255.0
-      exclude:
-        - 192.168.2.1
+      gateway: 192.168.2.1
     interfaces:
       - name: Gi0/0
         ip: 192.168.43.2
@@ -452,10 +443,8 @@ nn-ce-04:
   hostname: "192.168.195.128"
   port: 5026
   groups:
-    - nornir_network
-    - ce_routers
-    - customers
     - customer_2
+    - nornir_network
   connection_options:
     napalm:
       extras:
@@ -468,8 +457,7 @@ nn-ce-04:
     dhcp:
       subnet: 192.168.2.0
       netmask: 255.255.255.0
-      exclude:
-        - 192.168.2.1
+      gateway: 192.168.2.1
     interfaces:
       - name: Gi0/0
         ip: 192.168.54.2
@@ -483,10 +471,8 @@ nn-ce-05:
   hostname: "192.168.195.128"
   port: 5028
   groups:
-    - nornir_network
-    - ce_routers
-    - customers
     - customer_3
+    - nornir_network
   connection_options:
     napalm:
       extras:
@@ -499,8 +485,7 @@ nn-ce-05:
     dhcp:
       subnet: 192.168.1.0
       netmask: 255.255.255.0
-      exclude:
-        - 192.168.1.1
+      gateway: 192.168.1.1
     interfaces:
       - name: Gi0/0
         ip: 192.168.65.2
@@ -514,10 +499,8 @@ nn-ce-06:
   hostname: "192.168.195.128"
   port: 5030
   groups:
-    - nornir_network
-    - ce_routers
-    - customers
     - customer_3
+    - nornir_network
   connection_options:
     napalm:
       extras:
@@ -530,8 +513,7 @@ nn-ce-06:
     dhcp:
       subnet: 192.168.2.0
       netmask: 255.255.255.0
-      exclude:
-        - 192.168.2.1
+      gateway: 192.168.2.1
     interfaces:
       - name: Gi0/0
         ip: 192.168.26.2
@@ -545,10 +527,8 @@ nn-ce-07:
   hostname: "192.168.195.128"
   port: 5032
   groups:
-    - nornir_network
-    - ce_routers
-    - customers
     - customer_4
+    - nornir_network
   connection_options:
     napalm:
       extras:
@@ -561,8 +541,7 @@ nn-ce-07:
     dhcp:
       subnet: 192.168.1.0
       netmask: 255.255.255.0
-      exclude:
-        - 192.168.1.1
+      gateway: 192.168.1.1
     interfaces:
       - name: Gi0/0
         ip: 192.168.17.2
@@ -576,10 +555,8 @@ nn-ce-08:
   hostname: "192.168.195.128"
   port: 5034
   groups:
-    - nornir_network
-    - ce_routers
-    - customers
     - customer_4
+    - nornir_network
   connection_options:
     napalm:
       extras:
@@ -590,10 +567,10 @@ nn-ce-08:
     hostname: 'CE1'
     loopback0: '172.31.8.1'
     dhcp:
-      subnet: 192.168.2.0
-      netmask: 255.255.255.0
-      exclude:
-        - 192.168.2.1
+      - name: LAN_DHCP_POOL
+        subnet: 192.168.2.0
+        netmask: 255.255.255.0
+        gateway: 192.168.2.1
     interfaces:
       - name: Gi0/0
         ip: 192.168.28.2

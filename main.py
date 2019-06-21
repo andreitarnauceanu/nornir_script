@@ -13,6 +13,14 @@ def load_data(task):
     )
     run_task(data, 'router.j2', task)
 
+def load_customer_data(task):
+    data = task.run(
+        task=load_yaml,
+        file=f'groups/customer.yaml'
+    )
+    run_task(data, 'router.j2', task)
+
+
 
 def erase_config_and_reboot(task):
     task.run(
@@ -81,8 +89,6 @@ print("3. Configure mbgp")
 print("4. Configure CE routers")
 option = input('Option: ')
 
-
-
 if option == '1':
     nornir = nr.filter(site="nornir")
     r = nornir.run(limit_logging_console)
@@ -100,5 +106,10 @@ elif option=='3':
     mbgp_reflector_hosts = nr.filter(mbgp_type='reflector')
     result = mbgp_reflector_hosts.run(mbgp_configure_reflector)
     print_result(result)
-elif option=='3':
-    pass
+elif option=='4':
+    nornir = nr.filter(site="customer")
+    import ipdb; ipdb.set_trace()
+    r = nornir.run(limit_logging_console)
+    print_result(r)
+    r = nornir.run(load_customer_data)
+    print_result(r)

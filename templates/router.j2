@@ -4,15 +4,25 @@ ip domain-name {{ host['domain'] }}
 interface Loopback0
  ip address {{host['loopback0']}} 255.255.255.255
 !
-{% if host.mpls %}
+{% if host['mpls'] is defined %}
 mpls ip
+{% endif %}
+!
+{% if host['dhcp'] is defined %}
+{% for pool in host['dhcp'] %}
+ip dhcp pool {{ pool.name }}
+ network {{ pool.subnet }} {{ pool.netmask }}
+ dns-server 8.8.8.8
+ default-router {{ pool.gateway }}
+ lease 0 1
+{% endfor %}
 {% endif %}
 !
 {% for interface in host['interfaces'] %}
 interface {{ interface.name }}
   description {{ interface.description }}
   ip address {{ interface.ip }} {{ interface.net }}
-  {% if interface.mpls %}
+  {% if interface.mpls is defined %}
   mpls ip
   {% endif %}
   no shutdown

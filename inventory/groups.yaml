@@ -15,3 +15,31 @@ pe_routers:
   data:
     mbgp_type: 'pe'
     asn: 65401
+customer_1:
+  data:
+    site: 'customer'
+    asn: 65500
+    networks:
+      - net: 192.168.0.0
+        mask: 0.0.255.255
+customer_2:
+  data:
+    site: 'customer'
+    asn: 65501
+    networks:
+      - net: 192.168.0.0
+        mask: 0.0.255.255
+customer_3:
+  data:
+    site: 'customer'
+    asn: 65502
+    networks:
+      - net: 192.168.0.0
+        mask: 0.0.255.255
+customer_4:
+  data:
+    site: 'customer'
+    asn: 65503
+    networks:
+      - net: 192.168.0.0
+        mask: 0.0.255.255
