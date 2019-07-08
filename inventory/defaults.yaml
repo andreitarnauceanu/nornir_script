@@ -11,12 +11,5 @@ connection_options:
         device_type: 'cisco_ios_telnet'
   netmiko:
     platform: 'cisco_ios_telnet'
-data:
-  domain: 'gns3.local'
-  users:
-    - name: 'admin'
-      pass: 'cisco'
-      privilege: 15
-    - name: 'guest'
-      pass: 'password'
-      privilege: 5
+    extras:
+      device_type: 'cisco_ios_telnet'

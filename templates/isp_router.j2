@@ -1,0 +1,67 @@
+hostname {{ host.name }}
+ip domain-name {{ host.domain }}
+!
+interface Loopback0
+ ip address {{ host.loopback0 }} 255.255.255.255
+!
+{% if host.mpls is defined and host.mpls is sameas true %}
+mpls ip
+mpls ldp router-id loopback0
+{% endif %}
+!
+!
+!
+{% for interface in host.interfaces %}
+{% if interface.vrf is defined %}
+ip vrf {{ interface.vrf.name }}
+ rd {{ host.asn }}:{{ interface.vrf.id}}
+ route-target export {{ host.asn }}:{{ interface.vrf.id }}
+ route-target import {{ host.asn }}:{{ interface.vrf.id }}
+router bgp {{ host.asn }}
+ neighbor {{ host.neighbor }} remote-as {{ host.asn }}
+ neighbor {{ host.neighbor }} update-source Loopback0
+ address-family vpnv4
+  neighbor {{ host.neighbor }} activate
+  neighbor {{ host.neighbor }} send-community extended
+ exit-address-family
+ address-family ipv4 vrf {{ interface.vrf.name }}
+  neighbor {{ interface.vrf.neighbor }} remote-as {{ interface.vrf.remote_asn }}
+  neighbor {{ interface.vrf.neighbor }} activate
+ exit-address-family
+{% endif %}
+interface {{ interface.name }}
+ {% if interface.vrf is defined %}
+ ip vrf forwarding {{ interface.vrf.name }}
+ {% endif %}
+ description {{ interface.description }}
+ ip address {{ interface.ip }} {{ interface.net }}
+ {% if interface.mpls is defined and interface.mpls is sameas true %}
+  mpls ip
+ {% endif %}
+ no shutdown
+{% endfor %}
+!
+router eigrp {{ host.asn }}
+ network {{ host.loopback0 }} 0.0.0.0
+{% for n in host.networks %}
+  network {{ n.net }} {{ n.mask }}
+{% endfor %}
+!
+!
+{% for user in host.users %}
+username {{ user.name }} privilege {{ user.privilege }} password {{ user.pass }}
+{% endfor %}
+!
+ip ssh version 2
+!
+crypto key generate rsa modulus 1024
+!
+line vty 0 4
+ login local
+ transport input ssh telnet
+ logging synchronous
+!
+line console 0
+ logging synchronous
+!
+logging console 7

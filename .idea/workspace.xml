@@ -2,15 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe297097-9500-484b-8afa-c67bf053bc83" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/groups/p_routers.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/groups/pe_routers.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/groups/reflector_routers.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/groups/ce_routers.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ce_router.j2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/isp_router.j2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/groups/nornir_network.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/groups/nornir_network.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/groups/p_routers.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/groups/pe_routers.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/groups/reflector_routers.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/defaults.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/defaults.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory/groups.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/groups.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory/hosts.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/hosts.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nornir_network.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/groups/nornir_network.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/mbgp.j2" beforeDir="false" afterPath="$PROJECT_DIR$/templates/mbgp.j2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/mbgp.j2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/router.j2" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,25 +31,25 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inventory/defaults.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+            <state>
+              <caret column="15" selection-start-column="15" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inventory/hosts.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/groups/nornir_network.yaml">
+        <entry file="file://$PROJECT_DIR$/inventory/groups.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="3" selection-start-column="3" selection-end-column="3" />
@@ -51,28 +58,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inventory/groups.yaml">
+        <entry file="file://$PROJECT_DIR$/groups/ce_routers.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/router.j2">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="30">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/inventory/hosts.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/groups/nornir_network.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="86" column="40" selection-start-line="86" selection-start-column="40" selection-end-line="86" selection-end-column="40" />
+            <state relative-caret-position="285">
+              <caret line="19" column="32" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="32" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -81,28 +97,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/groups/pe_routers.yaml">
+        <entry file="file://$PROJECT_DIR$/templates/isp_router.j2">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="36" lean-forward="true" selection-start-column="36" selection-end-column="36" />
+            <state relative-caret-position="300">
+              <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/groups/reflector_routers.yaml">
+        <entry file="file://$PROJECT_DIR$/templates/ce_router.j2">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="4" selection-start-line="1" selection-end-line="1" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/mbgp.j2">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state relative-caret-position="390">
+              <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -130,7 +137,21 @@
       <find>gns3.local</find>
       <find>nornir_network</find>
       <find>nornir</find>
+      <find>vpnv</find>
+      <find>&quot;192.168.195.128&quot;</find>
+      <find>hostname: '</find>
+      <find>neighbor {{ interface.vrf.neighbor }} activate</find>
+      <find>remote_asn</find>
+      <find>5013</find>
+      <find>ce_routers</find>
+      <find>router bgp</find>
+      <find>dhcp</find>
+      <find>neighbor: 10.</find>
     </findStrings>
+    <replaceStrings>
+      <replace>192.168.195.128</replace>
+      <replace>name: '</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -145,28 +166,32 @@
         <option value="$USER_HOME$/.local/share/virtualenvs/nornir_script-9hxR_wY4/local/lib/python3.6/site-packages/netmiko/scp_handler.py" />
         <option value="$PROJECT_DIR$/show.py" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/config.yaml" />
         <option value="$PROJECT_DIR$/router.j2" />
         <option value="$PROJECT_DIR$/nornir_network.yaml" />
         <option value="$PROJECT_DIR$/mbgp.j2" />
         <option value="$PROJECT_DIR$/templates/line.j2" />
+        <option value="$PROJECT_DIR$/groups/pe_routers.yaml" />
+        <option value="$PROJECT_DIR$/groups/route_reflector" />
+        <option value="$PROJECT_DIR$/templates/mbgp.j2" />
+        <option value="$PROJECT_DIR$/inventory/small_hosts.yaml" />
+        <option value="$PROJECT_DIR$/groups/p_routers.yaml" />
+        <option value="$USER_HOME$/.local/share/virtualenvs/nornir_script-9hxR_wY4/local/lib/python3.6/site-packages/nornir/plugins/tasks/networking/netmiko_send_command.py" />
+        <option value="$PROJECT_DIR$/config.yaml" />
         <option value="$PROJECT_DIR$/templates/router.j2" />
         <option value="$PROJECT_DIR$/inventory/defaults.yaml" />
-        <option value="$PROJECT_DIR$/groups/pe_routers.yaml" />
-        <option value="$PROJECT_DIR$/groups/p_routers.yaml" />
-        <option value="$PROJECT_DIR$/groups/route_reflector" />
-        <option value="$PROJECT_DIR$/inventory/hosts.yaml" />
-        <option value="$PROJECT_DIR$/groups/nornir_network.yaml" />
-        <option value="$PROJECT_DIR$/inventory/groups.yaml" />
-        <option value="$PROJECT_DIR$/templates/mbgp.j2" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/groups/nornir_network.yaml" />
+        <option value="$PROJECT_DIR$/templates/ce_router.j2" />
+        <option value="$PROJECT_DIR$/templates/isp_router.j2" />
+        <option value="$PROJECT_DIR$/inventory/groups.yaml" />
+        <option value="$PROJECT_DIR$/groups/ce_routers.yaml" />
+        <option value="$PROJECT_DIR$/inventory/hosts.yaml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="960" />
-    <option name="y" value="1050" />
-    <option name="width" value="964" />
+    <option name="x" value="-4" />
+    <option name="width" value="1928" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
@@ -206,12 +231,15 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/inventory" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/inventory" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/groups" />
       <recent name="$PROJECT_DIR$" />
@@ -300,11 +328,22 @@
       <workItem from="1559816383297" duration="1636000" />
       <workItem from="1559885316906" duration="25073000" />
       <workItem from="1559913644063" duration="13811000" />
+      <workItem from="1561143134039" duration="944000" />
+      <workItem from="1561149107194" duration="1770000" />
+      <workItem from="1561155058252" duration="41757000" />
+      <workItem from="1561407424082" duration="10158000" />
+      <workItem from="1561492500683" duration="7136000" />
+      <workItem from="1561675421933" duration="658000" />
+      <workItem from="1561919634164" duration="693000" />
+      <workItem from="1561927257921" duration="264000" />
+      <workItem from="1561962259020" duration="6098000" />
+      <workItem from="1562239935904" duration="23000" />
+      <workItem from="1562609739926" duration="13331000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105398000" />
+    <option name="totallyTimeSpent" value="191106000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -316,24 +355,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="1050" width="1928" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-4" y="0" width="1928" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49805447" weight="0.10458911" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49805447" visible="true" weight="0.15368196" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5019455" side_tool="true" weight="0.14994664" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4978022" weight="0.3297414" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4978022" weight="0.32900432" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3297414" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3297414" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32900432" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5021978" side_tool="true" weight="0.3297414" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.8153846" visible="true" weight="0.5258621" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.38207045" side_tool="true" visible="true" weight="0.40367964" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.6179296" visible="true" weight="0.40367964" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.4994664" weight="0.3286638" />
       <window_info anchor="bottom" id="Pylint" order="13" weight="0.3297414" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -343,7 +381,7 @@
       <window_info anchor="right" id="Database" order="4" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49805447" weight="0.10458911" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49805447" visible="true" weight="0.14407684" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5019455" side_tool="true" weight="0.14994664" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -356,8 +394,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3297414" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5021978" side_tool="true" weight="0.3297414" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.8153846" visible="true" weight="0.5258621" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.3815368" side_tool="true" weight="0.4385776" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.61846316" visible="true" weight="0.3275862" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.4994664" weight="0.3286638" />
       <window_info anchor="bottom" id="Pylint" order="13" weight="0.3297414" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -371,13 +409,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.local/share/virtualenvs/nornir_script-9hxR_wY4/local/lib/python3.6/site-packages/nornir/plugins/tasks/networking/napalm_configure.py" />
     <entry file="file://$USER_HOME$/.local/share/virtualenvs/nornir_script-9hxR_wY4/local/lib/python3.6/site-packages/nornir/__init__.py" />
     <entry file="file://$USER_HOME$/.local/share/virtualenvs/nornir_script-9hxR_wY4/local/lib/python3.6/site-packages/netmiko/base_connection.py" />
@@ -429,13 +460,6 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pipfile">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -446,76 +470,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/groups/p_routers.yaml">
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3" selection-start-column="3" selection-end-column="3" />
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inventory/defaults.yaml">
+    <entry file="file://$PROJECT_DIR$/inventory/small_hosts.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inventory/hosts.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/groups/nornir_network.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3" selection-start-column="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inventory/groups.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        <state relative-caret-position="513">
+          <caret line="137" column="26" selection-start-line="137" selection-start-column="26" selection-end-line="137" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/groups/pe_routers.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="36" lean-forward="true" selection-start-column="36" selection-end-column="36" />
+          <caret column="36" selection-start-column="36" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/groups/reflector_routers.yaml">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/groups/p_routers.yaml">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="4" selection-start-line="1" selection-end-line="1" selection-end-column="9" />
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/router.j2">
+    <entry file="file://$USER_HOME$/.local/share/virtualenvs/nornir_script-9hxR_wY4/local/lib/python3.6/site-packages/nornir/plugins/tasks/networking/netmiko_send_command.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="345">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/mbgp.j2">
+    <entry file="file://$PROJECT_DIR$/inventory/defaults.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        <state>
+          <caret column="15" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="86" column="40" selection-start-line="86" selection-start-column="40" selection-end-line="86" selection-end-column="40" />
+        <state relative-caret-position="285">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="32" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ce_router.j2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/isp_router.j2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/groups/nornir_network.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inventory/groups.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/groups/ce_routers.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inventory/hosts.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
         </state>
       </provider>
     </entry>

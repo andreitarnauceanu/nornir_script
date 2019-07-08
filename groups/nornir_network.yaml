@@ -1,9 +1,10 @@
 ---
 mpls: True
-networks:
-  - net: 10.123.0.0
-    mask: 0.0.255.255
-  - net: 172.16.0.0
-    mask: 0.0.255.255
-  - net: 10.0.0.0
-    mask: 0.0.0.255
+domain: 'gns3.isp'
+users:
+  - name: 'admin'
+    pass: 'cisco'
+    privilege: 15
+  - name: 'guest'
+    pass: 'password'
+    privilege: 5

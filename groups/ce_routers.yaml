@@ -1,0 +1,10 @@
+---
+domain: 'gns3.client'
+neighbor_asn: 64501
+users:
+  - name: 'isp_admin'
+    pass: 'cisco'
+    privilege: 15
+  - name: 'client_admin'
+    pass: 'password'
+    privilege: 5

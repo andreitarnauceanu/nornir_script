@@ -1,605 +1,275 @@
 ---
-nn-p-01:
-  hostname: "192.168.195.128"
-  port: 5000
+nn-ce-1a:
+  hostname: 192.168.195.128
+  port: 5015
   groups:
-    - nornir_network
-    - p_routers
-    - reflector_routers
+    - ce_routers
   connection_options:
     napalm:
       extras:
         optional_args:
           transport: 'telnet'
-          port: 5000
+          port: 5015
+
   data:
-    hostname: 'P1'
-    loopback0: '10.0.0.1'
+    name: 'CE1A'
+    loopback0: '172.31.1.1'
+    asn: 65503
+    neighbor: 10.0.0.1
+    dhcp:
+      - subnet: 172.16.1.0
+        netmask: 255.255.255.0
+        gateway: 172.16.1.1
+        name: 'LAN_DHCP_POOL'
     interfaces:
       - name: Gi0/0
-        ip: 10.123.14.1
+        ip: 172.16.1.1
         net: 255.255.255.0
-        description: 'P1 to P4'
+        description: 'LAN'
+      - name: Gi0/1
+        ip: 10.0.0.2
+        net: 255.255.255.252
+        description: 'CE1A to PE1'
+nn-ce-1b:
+  hostname: 192.168.195.128
+  port: 5017
+  groups:
+    - ce_routers
+  connection_options:
+    napalm:
+      extras:
+        optional_args:
+          transport: 'telnet'
+          port: 5017
+  data:
+    name: 'CE1B'
+    loopback0: '172.31.2.1'
+    asn: 65504
+    neighbor: 10.0.0.5
+    dhcp:
+      - subnet: 172.16.1.0
+        netmask: 255.255.255.0
+        gateway: 172.16.1.1
+        name: 'LAN_DHCP_POOL'
+    interfaces:
+      - name: Gi0/0
+        ip: 172.16.1.1
+        net: 255.255.255.0
+        description: 'LAN'
+      - name: Gi0/1
+        ip: 10.0.0.6
+        net: 255.255.255.252
+        description: 'CE1B to PE1'
+nn-ce-2a:
+  hostname: 192.168.195.128
+  port: 5019
+  groups:
+    - ce_routers
+  connection_options:
+    napalm:
+      extras:
+        optional_args:
+          transport: 'telnet'
+          port: 5019
+  data:
+    name: 'CE3'
+    loopback0: '172.31.3.1'
+    asn: 65505
+    neighbor: 10.0.0.17
+    dhcp:
+      - subnet: 172.16.2.0
+        netmask: 255.255.255.0
+        gateway: 172.16.2.1
+        name: 'LAN_DHCP_POOL'
+    interfaces:
+      - name: Gi0/0
+        ip: 172.16.2.1
+        net: 255.255.255.0
+        description: 'LAN'
+      - name: Gi0/1
+        ip: 10.0.0.18
+        net: 255.255.255.252
+        description: 'CE2A to PE2'
+nn-ce-2b:
+  hostname: 192.168.195.128
+  port: 5021
+  groups:
+    - ce_routers
+  connection_options:
+    napalm:
+      extras:
+        optional_args:
+          transport: 'telnet'
+          port: 5021
+  data:
+    name: 'CE3'
+    loopback0: '172.31.4.1'
+    asn: 65506
+    neighbor: 10.0.0.21
+    dhcp:
+      - subnet: 172.16.2.0
+        netmask: 255.255.255.0
+        gateway: 172.16.2.1
+        name: 'LAN_DHCP_POOL'
+    interfaces:
+      - name: Gi0/0
+        ip: 172.16.2.1
+        net: 255.255.255.0
+        description: 'LAN'
+      - name: Gi0/1
+        ip: 10.0.0.22
+        net: 255.255.255.252
+        description: 'CE2A to PE2'
+nn-p-01:
+  hostname: 192.168.195.128
+  port: 5023
+  groups:
+      - nornir_network
+  connection_options:
+    napalm:
+      extras:
+        optional_args:
+          transport: 'telnet'
+          port: 5023
+  data:
+    name: 'P1'
+    loopback0: '10.10.10.1'
+    interfaces:
+      - name: Gi0/0
+        ip: 172.16.1.2
+        net: 255.255.255.252
+        description: 'P1 to P3'
         mpls: True
       - name: Gi0/1
-        ip: 10.123.12.1
-        net: 255.255.255.0
+        ip: 172.16.1.5
+        net: 255.255.255.252
         description: 'P1 to P2'
         mpls: True
-      - name: Gi0/2
-        ip: 172.16.15.1
-        net: 255.255.255.0
-        description: 'P1 to PE5'
-        mpls: True
-      - name: Gi0/3
-        ip: 172.16.16.1
-        net: 255.255.255.0
-        description: 'P1 to PE6'
-        mpls: True
-      - name: Gi0/4
-        ip: 172.16.11.1
-        net: 255.255.255.0
-        description: 'P1 to PE1'
-        mpls: True
 nn-p-02:
-  hostname: "192.168.195.128"
-  port: 5002
+  hostname: 192.168.195.128
+  port: 5025
   groups:
-    - nornir_network
-    - p_routers
+      - nornir_network
   connection_options:
     napalm:
       extras:
         optional_args:
           transport: 'telnet'
-          port: 5002
+          port: 5025
   data:
-    hostname: 'P2'
-    loopback0: '10.0.0.2'
+    name: 'P2'
+    loopback0: '10.10.10.2'
     interfaces:
       - name: Gi0/0
-        ip: 10.123.23.1
-        net: 255.255.255.0
-        description: 'P2 to P3'
-        mpls: True
-      - name: Gi0/1
-        ip: 10.123.12.2
-        net: 255.255.255.0
+        ip: 172.16.1.6
+        net: 255.255.255.252
         description: 'P2 to P1'
         mpls: True
-      - name: Gi0/2
-        ip: 172.16.21.1
-        net: 255.255.255.0
-        description: 'P2 to PE1'
-        mpls: True
-      - name: Gi0/3
-        ip: 172.16.26.1
-        net: 255.255.255.0
-        description: 'P2 to PE6'
-        mpls: True
       - name: Gi0/4
-        ip: 172.16.22.1
-        net: 255.255.255.0
+        ip: 10.0.0.14
+        net: 255.255.255.252
         description: 'P2 to PE2'
         mpls: True
 nn-p-03:
-  hostname: "192.168.195.128"
-  port: 5004
+  hostname: 192.168.195.128
+  port: 5009
   groups:
-    - nornir_network
-    - p_routers
+      - nornir_network
   connection_options:
     napalm:
       extras:
         optional_args:
           transport: 'telnet'
-          port: 5004
+          port: 5009
   data:
-    hostname: 'P3'
-    loopback0: '10.0.0.3'
+    name: 'P3'
+    loopback0: '10.1.1.2'
     interfaces:
-      - name: Gi0/0
-        ip: 10.123.23.2
-        net: 255.255.255.0
-        description: 'P3 to P2'
-        mpls: True
-      - name: Gi0/1
-        ip: 10.123.34.1
-        net: 255.255.255.0
-        description: 'P3 to P4'
-        mpls: True
-      - name: Gi0/2
-        ip: 172.16.32.1
-        net: 255.255.255.0
-        description: 'P3 to PE2'
-        mpls: True
       - name: Gi0/3
-        ip: 172.16.33.1
-        net: 255.255.255.0
-        description: 'P3 to PE3'
+        ip: 10.0.0.10
+        net: 255.255.255.252
+        description: 'P3 to PE1'
         mpls: True
       - name: Gi0/4
-        ip: 172.16.34.1
-        net: 255.255.255.0
-        description: 'P3 to PE4'
-        mpls: True
-nn-p-04:
-  hostname: "192.168.195.128"
-  port: 5006
-  groups:
-    - nornir_network
-    - p_routers
-  connection_options:
-    napalm:
-      extras:
-        optional_args:
-          transport: 'telnet'
-          port: 5006
-  data:
-    hostname: 'P4'
-    loopback0: '10.0.0.4'
-    interfaces:
-      - name: Gi0/0
-        ip: 10.123.14.2
-        net: 255.255.255.0
-        description: 'P4 to P1'
-        mpls: True
-      - name: Gi0/1
-        ip: 10.123.34.2
-        net: 255.255.255.0
-        description: 'P4 to P3'
-        mpls: True
-      - name: Gi0/2
-        ip: 172.16.44.1
-        net: 255.255.255.0
-        description: 'P4 to PE4'
-        mpls: True
-      - name: Gi0/3
-        ip: 172.16.43.1
-        net: 255.255.255.0
-        description: 'P4 to PE3'
-        mpls: True
-      - name: Gi0/4
-        ip: 172.16.45.1
-        net: 255.255.255.0
-        description: 'P4 to PE5'
+        ip: 172.16.1.1
+        net: 255.255.255.252
+        description: 'P3 to P1'
         mpls: True
 nn-pe-01:
-  hostname: "192.168.195.128"
-  port: 5008
+  hostname: 192.168.195.128
+  port: 5011
   groups:
-    - nornir_network
-    - pe_routers
+      - nornir_network
   connection_options:
     napalm:
       extras:
         optional_args:
           transport: 'telnet'
-          port: 5008
+          port: 5011
   data:
-    hostname: 'PE1'
-    loopback0: '10.0.1.1'
+    name: 'PE1'
+    loopback0: '10.1.1.1'
+    neighbor: '10.1.1.3'
     interfaces:
-      - name: Gi0/0
-        ip: 172.16.21.2
-        net: 255.255.255.0
+      - name: Gi0/1
+        ip: 10.0.0.1
+        net: 255.255.255.252
+        description: 'PE1 to CE1A'
+        vrf:
+          id: 1
+          name: CustomerA
+          remote_asn: 65503
+          neighbor: 10.0.0.2
+      - name: Gi0/2
+        ip: 10.0.0.5
+        net: 255.255.255.252
+        description: 'PE1 to CE1B'
+        vrf:
+          id: 2
+          name: CustomerB
+          remote_asn: 65504
+          neighbor: 10.0.0.6
+      - name: Gi0/3
+        ip: 10.0.0.9
+        net: 255.255.255.252
+        description: 'PE1 to P3'
+        mpls: True
+nn-pe-02:
+  hostname: 192.168.195.128
+  port: 5013
+  groups:
+      - nornir_network
+  connection_options:
+    napalm:
+      extras:
+        optional_args:
+          transport: 'telnet'
+          port: 5013
+  data:
+    name: 'PE2'
+    loopback0: '10.1.1.3'
+    neighbor: '10.1.1.1'
+    interfaces:
+      - name: Gi0/1
+        ip: 10.0.0.17
+        net: 255.255.255.252
+        description: 'PE1 to CE2A'
+        vrf:
+          id: 1
+          name: CustomerA
+          remote_asn: 65505
+          neighbor: 10.0.0.18
+      - name: Gi0/2
+        ip: 10.0.0.21
+        net: 255.255.255.252
+        description: 'PE1 to CE2B'
+        vrf:
+          id: 2
+          name: CustomerB
+          remote_asn: 65506
+          neighbor: 10.0.0.22
+      - name: Gi0/4
+        ip: 10.0.0.13
+        net: 255.255.255.252
         description: 'PE1 to P2'
         mpls: True
-      - name: Gi0/1
-        ip: 172.16.11.2
-        net: 255.255.255.0
-        description: 'PE1 to P1'
-        mpls: True
-      - name: Gi0/4
-        ip: 192.168.17.1
-        net: 255.255.255.0
-        description: 'PE1 to CE7'
-# TODO - add CE interface details
-nn-pe-02:
-  hostname: "192.168.195.128"
-  port: 5010
-  groups:
-    - nornir_network
-    - pe_routers
-  connection_options:
-    netmiko:
-      platform: 'cisco_ios_telnet'
-    napalm:
-      extras:
-        optional_args:
-          transport: 'telnet'
-          port: 5010
-  data:
-    hostname: 'PE2'
-    loopback0: '10.0.1.2'
-    interfaces:
-      - name: Gi0/0
-        ip: 172.16.32.2
-        net: 255.255.255.0
-        description: 'PE2 to P3'
-        mpls: True
-      - name: Gi0/1
-        ip: 172.16.22.2
-        net: 255.255.255.0
-        description: 'PE2 to P2'
-        mpls: True
-      - name: Gi0/4
-        ip: 192.168.26.1
-        net: 255.255.255.0
-        description: 'PE2 to CE6'
-      - name: Gi0/3
-        ip: 192.168.28.1
-        net: 255.255.255.0
-        description: 'PE2 to CE8'
-nn-pe-03:
-  hostname: "192.168.195.128"
-  port: 5012
-  groups:
-    - nornir_network
-    - pe_routers
-  connection_options:
-    napalm:
-      extras:
-        optional_args:
-          transport: 'telnet'
-          port: 5012
-  data:
-    hostname: 'PE3'
-    loopback0: '10.0.1.3'
-    interfaces:
-      - name: Gi0/0
-        ip: 172.16.33.2
-        net: 255.255.255.0
-        description: 'PE3 to P3'
-        mpls: True
-      - name: Gi0/1
-        ip: 172.16.43.2
-        net: 255.255.255.0
-        description: 'PE3 to P4'
-        mpls: True
-      - name: Gi0/4
-        ip: 192.168.31.1
-        net: 255.255.255.0
-        description: 'PE3 to CE1'
-nn-pe-04:
-  hostname: "192.168.195.128"
-  port: 5014
-  groups:
-    - nornir_network
-    - pe_routers
-  connection_options:
-    napalm:
-      extras:
-        optional_args:
-          transport: 'telnet'
-          port: 5014
-  data:
-    hostname: 'PE4'
-    loopback0: '10.0.1.4'
-    interfaces:
-      - name: Gi0/0
-        ip: 172.16.44.2
-        net: 255.255.255.0
-        description: 'PE4 to P4'
-        mpls: True
-      - name: Gi0/1
-        ip: 172.16.34.2
-        net: 255.255.255.0
-        description: 'PE4 to P3'
-        mpls: True
-      - name: Gi0/4
-        ip: 192.168.42.1
-        net: 255.255.255.0
-        description: 'PE4 to CE2'
-      - name: Gi0/3
-        ip: 192.168.43.1
-        net: 255.255.255.0
-        description: 'PE4 to CE3'
-nn-pe-05:
-  hostname: "192.168.195.128"
-  port: 5016
-  groups:
-    - nornir_network
-    - pe_routers
-  connection_options:
-    napalm:
-      extras:
-        optional_args:
-          transport: 'telnet'
-          port: 5016
-  data:
-    hostname: 'PE5'
-    loopback0: '10.0.1.5'
-    interfaces:
-      - name: Gi0/0
-        ip: 172.16.15.2
-        net: 255.255.255.0
-        description: 'PE5 to P1'
-        mpls: True
-      - name: Gi0/1
-        ip: 172.16.45.2
-        net: 255.255.255.0
-        description: 'PE5 to P4'
-        mpls: True
-      - name: Gi0/4
-        ip: 192.168.54.1
-        net: 255.255.255.0
-        description: 'PE5 to CE4'
-nn-pe-06:
-  hostname: "192.168.195.128"
-  port: 5018
-  groups:
-    - nornir_network
-    - pe_routers
-  connection_options:
-    napalm:
-      extras:
-        optional_args:
-          transport: 'telnet'
-          port: 5018
-  data:
-    hostname: 'PE6'
-    loopback0: '10.0.1.6'
-    interfaces:
-      - name: Gi0/0
-        ip: 172.16.16.2
-        net: 255.255.255.0
-        description: 'PE6 to P1'
-        mpls: True
-      - name: Gi0/1
-        ip: 172.16.26.2
-        net: 255.255.255.0
-        description: 'PE6 to P2'
-        mpls: True
-      - name: Gi0/4
-        ip: 192.168.65.1
-        net: 255.255.255.0
-        description: 'PE6 to CE5'
-nn-ce-01:
-  hostname: "192.168.195.128"
-  port: 5020
-  groups:
-    - nornir_network
-    - ce_routers
-    - customers
-    - customer_1
-  connection_options:
-    napalm:
-      extras:
-        optional_args:
-          transport: 'telnet'
-          port: 5020
-  data:
-    hostname: 'CE1'
-    loopback0: '172.31.1.1'
-    dhcp:
-      subnet: 192.168.1.0
-      netmask: 255.255.255.0
-      exclude:
-        - 192.168.1.1
-    interfaces:
-      - name: Gi0/0
-        ip: 192.168.31.2
-        net: 255.255.255.0
-        description: 'CE1 to P3'
-      - name: Gi0/1
-        ip: 192.168.1.1
-        net: 255.255.255.0
-        description: 'LAN'
-nn-ce-02:
-  hostname: "192.168.195.128"
-  port: 5022
-  groups:
-    - nornir_network
-    - ce_routers
-    - customers
-    - customer_2
-  connection_options:
-    napalm:
-      extras:
-        optional_args:
-          transport: 'telnet'
-          port: 5022
-  data:
-    hostname: 'CE1'
-    loopback0: '172.31.2.1'
-    dhcp:
-      subnet: 192.168.1.0
-      netmask: 255.255.255.0
-      exclude:
-        - 192.168.1.1
-    interfaces:
-      - name: Gi0/0
-        ip: 192.168.42.2
-        net: 255.255.255.0
-        description: 'CE2 to P4'
-      - name: Gi0/1
-        ip: 192.168.1.1
-        net: 255.255.255.0
-        description: 'LAN'
-nn-ce-03:
-  hostname: "192.168.195.128"
-  port: 5024
-  groups:
-    - nornir_network
-    - ce_routers
-    - customers
-    - customer_1
-  connection_options:
-    napalm:
-      extras:
-        optional_args:
-          transport: 'telnet'
-          port: 5024
-  data:
-    hostname: 'CE1'
-    loopback0: '172.31.3.1'
-    dhcp:
-      subnet: 192.168.2.0
-      netmask: 255.255.255.0
-      exclude:
-        - 192.168.2.1
-    interfaces:
-      - name: Gi0/0
-        ip: 192.168.43.2
-        net: 255.255.255.0
-        description: 'CE3 to P4'
-      - name: Gi0/1
-        ip: 192.168.2.1
-        net: 255.255.255.0
-        description: 'LAN'
-nn-ce-04:
-  hostname: "192.168.195.128"
-  port: 5026
-  groups:
-    - nornir_network
-    - ce_routers
-    - customers
-    - customer_2
-  connection_options:
-    napalm:
-      extras:
-        optional_args:
-          transport: 'telnet'
-          port: 5026
-  data:
-    hostname: 'CE1'
-    loopback0: '172.31.4.1'
-    dhcp:
-      subnet: 192.168.2.0
-      netmask: 255.255.255.0
-      exclude:
-        - 192.168.2.1
-    interfaces:
-      - name: Gi0/0
-        ip: 192.168.54.2
-        net: 255.255.255.0
-        description: 'CE4 to P5'
-      - name: Gi0/1
-        ip: 192.168.2.1
-        net: 255.255.255.0
-        description: 'LAN'
-nn-ce-05:
-  hostname: "192.168.195.128"
-  port: 5028
-  groups:
-    - nornir_network
-    - ce_routers
-    - customers
-    - customer_3
-  connection_options:
-    napalm:
-      extras:
-        optional_args:
-          transport: 'telnet'
-          port: 5028
-  data:
-    hostname: 'CE1'
-    loopback0: '172.31.5.1'
-    dhcp:
-      subnet: 192.168.1.0
-      netmask: 255.255.255.0
-      exclude:
-        - 192.168.1.1
-    interfaces:
-      - name: Gi0/0
-        ip: 192.168.65.2
-        net: 255.255.255.0
-        description: 'CE5 to P6'
-      - name: Gi0/1
-        ip: 192.168.1.1
-        net: 255.255.255.0
-        description: 'LAN'
-nn-ce-06:
-  hostname: "192.168.195.128"
-  port: 5030
-  groups:
-    - nornir_network
-    - ce_routers
-    - customers
-    - customer_3
-  connection_options:
-    napalm:
-      extras:
-        optional_args:
-          transport: 'telnet'
-          port: 5030
-  data:
-    hostname: 'CE1'
-    loopback0: '172.31.6.1'
-    dhcp:
-      subnet: 192.168.2.0
-      netmask: 255.255.255.0
-      exclude:
-        - 192.168.2.1
-    interfaces:
-      - name: Gi0/0
-        ip: 192.168.26.2
-        net: 255.255.255.0
-        description: 'CE6 to P2'
-      - name: Gi0/1
-        ip: 192.168.2.1
-        net: 255.255.255.0
-        description: 'LAN'
-nn-ce-07:
-  hostname: "192.168.195.128"
-  port: 5032
-  groups:
-    - nornir_network
-    - ce_routers
-    - customers
-    - customer_4
-  connection_options:
-    napalm:
-      extras:
-        optional_args:
-          transport: 'telnet'
-          port: 5032
-  data:
-    hostname: 'CE1'
-    loopback0: '172.31.7.1'
-    dhcp:
-      subnet: 192.168.1.0
-      netmask: 255.255.255.0
-      exclude:
-        - 192.168.1.1
-    interfaces:
-      - name: Gi0/0
-        ip: 192.168.17.2
-        net: 255.255.255.0
-        description: 'CE7 to P1'
-      - name: Gi0/1
-        ip: 192.168.1.1
-        net: 255.255.255.0
-        description: 'LAN'
-nn-ce-08:
-  hostname: "192.168.195.128"
-  port: 5034
-  groups:
-    - nornir_network
-    - ce_routers
-    - customers
-    - customer_4
-  connection_options:
-    napalm:
-      extras:
-        optional_args:
-          transport: 'telnet'
-          port: 5034
-  data:
-    hostname: 'CE1'
-    loopback0: '172.31.8.1'
-    dhcp:
-      subnet: 192.168.2.0
-      netmask: 255.255.255.0
-      exclude:
-        - 192.168.2.1
-    interfaces:
-      - name: Gi0/0
-        ip: 192.168.28.2
-        net: 255.255.255.0
-        description: 'CE8 to P2'
-      - name: Gi0/1
-        ip: 192.168.2.1
-        net: 255.255.255.0
-        description: 'LAN'

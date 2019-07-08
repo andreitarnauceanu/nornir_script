@@ -2,16 +2,12 @@
 nornir_network:
   data:
     site: 'nornir'
-    asn: 65401
-p_routers:
+    asn: 64501
+    networks:
+      - net: 172.16.0.0
+        mask: 0.0.255.255
+      - net: 10.0.0.0
+        mask: 0.255.255.255
+ce_routers:
   data:
-    type: 'p'
-    asn:
-reflector_routers:
-  data:
-    mbgp_type: 'reflector'
-    asn: 65401
-pe_routers:
-  data:
-    mbgp_type: 'pe'
-    asn: 65401
+    site: 'clients'
