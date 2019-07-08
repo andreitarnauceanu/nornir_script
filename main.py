@@ -57,6 +57,7 @@ while True:
     print("1. Configure ISP routers")
     print("2. Configure CE routers")
     print("3. Erase configuration and reboot")
+    print("q. Exit...")
     option = input('Option: ')
 
     if option == '0':
@@ -77,6 +78,6 @@ while True:
         print("Erasing configuration...")
         clear = nornir.run(erase_config_and_reboot)
         print_result(clear)
-    elif option == 'q':
+    elif option.lower() == 'q':
         break
     input('Press any enter to continue...')
