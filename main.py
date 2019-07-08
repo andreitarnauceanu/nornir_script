@@ -3,7 +3,7 @@ from nornir.plugins.tasks.data import load_yaml
 from nornir.plugins.tasks.text import template_file
 from nornir.plugins.tasks.networking import napalm_configure, netmiko_send_command
 from nornir.plugins.functions.text import print_result
-from yaml import dump
+import subprocess as sp
 
 
 def load_isp_data(task):
@@ -51,23 +51,32 @@ def run_task(data, template, task):
 
 nornir = InitNornir(config_file="config.yaml")
 
-print("0. Limit logging output")
-print("1. Configure ISP routers")
-print("2. Configure CE routers")
-print("3. Erase configuration and reboot")
-option = input('Option: ')
+while True:
+    tmp = sp.call('clear', shell=True)
+    print("0. Limit logging output")
+    print("1. Configure ISP routers")
+    print("2. Configure CE routers")
+    print("3. Erase configuration and reboot")
+    option = input('Option: ')
 
-if option == '0':
-    r = nornir.run(limit_logging_console)
-    print_result(r)
-elif option == '1':
-    isp = nornir.filter(site='nornir')
-    r = isp.run(load_isp_data)
-    print_result(r)
-elif option == '2':
-    clients = nornir.filter(site='clients')
-    r = clients.run(load_ce_data)
-    print_result(r)
-elif option == '3':
-    clear = nornir.run(erase_config_and_reboot)
-    print_result(clear)
+    if option == '0':
+        print("Limiting logging output...")
+        r = nornir.run(limit_logging_console)
+        print_result(r)
+    elif option == '1':
+        print("Configuring ISP routers...")
+        isp = nornir.filter(site='nornir')
+        r = isp.run(load_isp_data)
+        print_result(r)
+    elif option == '2':
+        print("Configuring CE routers...")
+        clients = nornir.filter(site='clients')
+        r = clients.run(load_ce_data)
+        print_result(r)
+    elif option == '3':
+        print("Erasing configuration...")
+        clear = nornir.run(erase_config_and_reboot)
+        print_result(clear)
+    elif option == 'q':
+        break
+    input('Press any enter to continue...')

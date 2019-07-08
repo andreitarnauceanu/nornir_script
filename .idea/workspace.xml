@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe297097-9500-484b-8afa-c67bf053bc83" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/groups/ce_routers.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ce_router.j2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/isp_router.j2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/groups/nornir_network.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/groups/nornir_network.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/groups/p_routers.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/groups/pe_routers.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/groups/reflector_routers.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/defaults.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/defaults.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/groups.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/groups.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/hosts.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/hosts.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/mbgp.j2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/router.j2" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +52,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inventory/hosts.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="227">
@@ -84,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="32" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="32" />
+            <state relative-caret-position="454">
+              <caret line="81" column="26" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -179,19 +165,19 @@
         <option value="$PROJECT_DIR$/config.yaml" />
         <option value="$PROJECT_DIR$/templates/router.j2" />
         <option value="$PROJECT_DIR$/inventory/defaults.yaml" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/groups/nornir_network.yaml" />
         <option value="$PROJECT_DIR$/templates/ce_router.j2" />
         <option value="$PROJECT_DIR$/templates/isp_router.j2" />
         <option value="$PROJECT_DIR$/inventory/groups.yaml" />
         <option value="$PROJECT_DIR$/groups/ce_routers.yaml" />
         <option value="$PROJECT_DIR$/inventory/hosts.yaml" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-4" />
-    <option name="width" value="1928" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="960" />
+    <option name="width" value="964" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
@@ -338,12 +324,12 @@
       <workItem from="1561927257921" duration="264000" />
       <workItem from="1561962259020" duration="6098000" />
       <workItem from="1562239935904" duration="23000" />
-      <workItem from="1562609739926" duration="13331000" />
+      <workItem from="1562609739926" duration="14354000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191106000" />
+    <option name="totallyTimeSpent" value="192129000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -355,9 +341,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="0" width="1928" height="1056" extended-state="6" />
+    <frame x="960" y="0" width="964" height="1056" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49805447" visible="true" weight="0.15368196" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49805447" visible="true" weight="0.31648353" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5019455" side_tool="true" weight="0.14994664" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -370,8 +357,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32900432" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.38207045" side_tool="true" visible="true" weight="0.40367964" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.6179296" visible="true" weight="0.40367964" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.3824176" side_tool="true" visible="true" weight="0.40367964" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.61758244" visible="true" weight="0.40367964" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.4994664" weight="0.3286638" />
       <window_info anchor="bottom" id="Pylint" order="13" weight="0.3297414" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -526,16 +513,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="32" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/ce_router.j2">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -575,6 +552,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="81" column="26" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
